@@ -1,9 +1,6 @@
 from django.views.generic import CreateView, UpdateView, DetailView, ListView
 from django.shortcuts import render
-
-# Create your views here.
-
-from home.models import CustomText, HomePage
+from .models import HomePage, CustomText, Bike
 
 
 def home(request):
@@ -27,3 +24,10 @@ def home(request):
         "packages": packages,
     }
     return render(request, "home/index.html", context)
+
+
+class BikeCreateView(CreateView):
+    template_name = "crud/create.html"
+    model = Bike
+    fields = "__all__"
+    success_url = "/"

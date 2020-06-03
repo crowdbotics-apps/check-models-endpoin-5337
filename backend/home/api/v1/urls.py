@@ -1,6 +1,6 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from .viewsets import BikeViewSet, CustomTextViewSet, HomePageViewSet
+from .viewsets import BikeViewSet, HomePageViewSet, CustomTextViewSet
 
 from home.api.v1.viewsets import (
     SignupViewSet,
